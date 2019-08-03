@@ -1,0 +1,19 @@
+{
+  "name": "fermentory",
+  "version": "0.0.1",
+  "description": "Homebrew fermentation monitor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "homebrew",
+    "fermentation",
+    "tilt"
+  ],
+  "author": "Alex Thompson <aptbosox@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-beacon-scanner": "^0.1.1"
+  }
+}
