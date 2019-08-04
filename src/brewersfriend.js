@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://log.brewersfriend.com'
-const STREAM_URL = BASE_URL + "/stream"
+const BASE_URL = 'https://log.brewersfriend.com';
+const STREAM_URL = BASE_URL + "/stream";
 
 export default class BrewersFriendClient {
   constructor(apiKey) {
@@ -9,7 +9,7 @@ export default class BrewersFriendClient {
   }
 
   postStream(data) {
-    const url = `${STREAM_URL}/${this.apiKey}`
+    const url = `${STREAM_URL}/${this.apiKey}`;
     return axios.post(url, data);
   }
 }
