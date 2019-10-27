@@ -1,5 +1,8 @@
 FROM node:8
 
+RUN apt-get update && \
+    apt-get install -y bluetooth bluez libbluetooth-dev libudev-dev
+
 WORKDIR /usr/src/app
 
 COPY package.json .
