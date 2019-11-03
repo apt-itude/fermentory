@@ -1,7 +1,6 @@
-FROM node:8
+FROM balenalib/raspberrypi3-node:8-build
 
-RUN apt-get update && \
-    apt-get install -y bluetooth bluez libbluetooth-dev libudev-dev
+RUN install_packages bluetooth bluez libbluetooth-dev libudev-dev
 
 WORKDIR /usr/src/app
 
@@ -11,5 +10,7 @@ COPY yarn.lock .
 RUN yarn install
 
 COPY . .
+
+ENV UDEV=1
 
 CMD [ "npm", "start" ]
