@@ -9,7 +9,8 @@ COPY yarn.lock .
 
 RUN yarn install
 
-COPY . .
+COPY src/ src/
+COPY .babelrc .
 
 ENV UDEV=1
 
