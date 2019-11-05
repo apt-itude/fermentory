@@ -1,6 +1,6 @@
 FROM balenalib/raspberrypi3-node:8-build
 
-RUN install_packages bluetooth bluez libbluetooth-dev libudev-dev
+RUN install_packages libudev-dev
 
 WORKDIR /usr/src/app
 
