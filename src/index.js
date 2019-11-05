@@ -1,4 +1,3 @@
-import config from 'config-yml';
 import { map, throttleTime } from 'rxjs/operators';
 
 import { tiltToBrewersFriend } from './adapters.js';
@@ -7,7 +6,12 @@ import Tilt from './tilt.js';
 
 const BF_PUBLISH_INTERVAL = 1200000;
 
-const bfClient = new BrewersFriendClient(config.brewersfriend.apiKey);
+if (!process.env.BREWERS_FRIEND_API_KEY) {
+  console.error('BREWERS_FRIEND_API_KEY environment variable is not set');
+  process.exit(1);
+}
+
+const bfClient = new BrewersFriendClient(process.env.BREWERS_FRIEND_API_KEY);
 const tilt = new Tilt();
 
 tilt.observe()
